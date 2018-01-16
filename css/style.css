@@ -1,0 +1,178 @@
+body {
+  font-family: 'Bree Serif', serif;
+  line-height: 1.5;
+}
+
+#container {
+  margin: 10px auto;
+  min-width: 320px;
+  max-width: 640px;
+  width: 60%;
+}
+
+#filter-todo {
+  background-color: #f1f1f1;
+  overflow: hidden;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+#filter-todo h1 {
+  float: left;
+  font-size: 1.4em;
+}
+
+#filter-todo .filter {
+  float: right;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-left: none;
+  display: block;
+  font-family: 'Bree Serif', serif;
+  font-size: 0.8em;
+  float: left;
+  padding: 5px 8px;
+  outline: 0;
+}
+
+.btn:first-child {
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+}
+
+.btn:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.btn:hover{
+  background-color: #eaeaea;
+}
+
+.btn.active {
+  color: white;
+  background: #ccc;
+}
+
+#todolist li {
+  padding: 1px 0;
+  border-bottom: 1px solid #eaeaea;
+  position: relative;
+}
+
+#todolist .actions {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+#todolist .item {
+  border-left: 5px solid #ccc;
+  border-radius: 3px;
+  color: #ccc;
+  cursor: pointer;
+  padding: 10px;
+  transition: border .3s;
+}
+#todolist .item.tag--work {
+  border-color: #f30;
+  color: #f30;
+}
+
+#todolist .item.tag--fun {
+  border-color: #147;
+  color: #147;
+}
+
+#todolist .item.tag--shop {
+  border-color: #928;
+  color: #928;
+}
+
+#todolist .item.tag--chill {
+  border-color: #654;
+  color: #654;
+}
+
+#todolist li:hover .item {
+  border-left-width: 15px;
+}
+
+#form-todo{
+  border-top: 3px solid #ccc;
+  margin-top: 15px;
+  overflow: hidden;
+  padding: 15px;
+}
+#form-todo input {
+  border: 1px solid #ccc;
+  font-family: 'Bree Serif';
+  float: left;
+  padding: 5px 8px;
+  outline: 0;
+  border-radius: 5px 0 0 5px;
+  width: 300px;
+}
+
+.status--completed {
+  text-decoration: line-through;
+}
+
+#message {
+  margin: 15px 0;
+  padding: 50px 25px;
+  text-align: center;
+  color: #fff;
+  display: none;
+}
+#message.error {
+  background: #ed1230;
+  display: block;
+}
+#message.success {
+  background: #12ed30;
+  display: block;
+}
+
+
+/*
+ * Medias queries
+ *
+ * - Permet de définir des conditions pour lesquels des instructions CSS sont valables
+ *
+ * - On peut définir les conditions avec notamment :
+ *    - max-width
+ *    - min-width = bonne pratique (mobile-first)
+ *    - max-height
+ *    - min-height
+ *    - orientation
+ */
+
+/* Si l'écran n'est pas plus grand en largeur que 640px */
+@media (max-width: 650px) {
+  #form-todo input {
+    width: 200px;
+  }
+}
+
+/* Si l'écran est a au moins une largeur de 800px */
+@media (min-width: 800px) {
+  #form-todo input {
+    width: 350px;
+  }
+}
+
+/* Si l'écran est en portrait */
+@media (orientation: portrait) {
+  #form-todo .btn {
+    background: red;
+  }
+}
+
+/* Si l'écran est en paysage */
+@media (orientation: landscape) {
+  #form-todo .btn {
+    background: blue;
+  }
+}
